@@ -8,3 +8,4 @@
         path: /opt/devops
         state: directory
         mode: '0755'
+...
