@@ -1,0 +1,10 @@
+---
+- name: Install Apache on web servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present        
+...
