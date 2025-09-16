@@ -1,0 +1,20 @@
+---
+- name: Install Apache Server
+  hosts: n2
+  become: yes
+  tasks:
+    - name: Install Apache2
+      apt:
+        name: Apache2
+        state: present  
+
+- name: start Apache2
+  service: 
+    name: Apache2
+    states: started
+
+- name: Enable Apache2
+  service: 
+    name: Apache2
+    enable: yes 
+...
