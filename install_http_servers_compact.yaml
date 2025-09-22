@@ -1,0 +1,31 @@
+---
+- name: Install HTTP Server (Compact Version)
+  hosts: g1
+  become: yes
+  vars:
+    apache_package:
+      Amazon: httpd
+      CentOS: httpd
+      Ubuntu: apache2
+      Debian: apache2
+    apache_service:
+      Amazon: httpd
+      CentOS: httpd
+      Ubuntu: apache2
+      Debian: apache2
+
+  tasks:
+    - name: Install Apache/HTTPD
+      package:
+        name: "{{ apache_package[ansible_distribution] }}"
+        state: present
+
+    - name: Start Apache/HTTPD service
+      service:
+        name: "{{ apache_service[ansible_distribution] }}"
+        state: started
+
+    - name: Enable Apache/HTTPD service
+      service:
+        name: "{{ apache_service[ansible_distribution] }}"
+        enabled: yes
