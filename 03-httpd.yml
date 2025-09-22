@@ -1,9 +1,9 @@
 ---
-- name: Install Apache Server
+- name: Install HTTP Server
   hosts: n2
   become: yes
   tasks:
-    - name: Install httpd
+    - name: Install HTTPD
       yum:
         name: httpd
         state: present  
