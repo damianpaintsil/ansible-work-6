@@ -10,10 +10,4 @@
       template:
         src: dynamic.j2
         dest: /var/www/html/dynamic.html 
-
-  tasks:
-    - name: Update dynamic page
-      template:
-        src: dynamic.j2
-        dest: /var/www/html/dynamic.html 
 ...
