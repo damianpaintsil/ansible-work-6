@@ -1,6 +1,6 @@
 ---
 - name: Deploy web app
-  hosts: n1
+  hosts: g1
   become: yes
   tasks:
     - name: Install Git
